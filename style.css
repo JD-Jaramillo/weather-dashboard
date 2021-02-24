@@ -1,0 +1,33 @@
+#header__wrapper {
+    background-color: rgb(2, 2, 41);
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+
+#search__wrapper {
+    margin: 10px;
+}
+
+#searchBtn {
+    background-color: blue;
+    color: white;
+}
+
+#searchBtn:hover {
+    box-shadow: 5px solid black;
+    transition: all .3s ease-in-out;
+  }
+
+  #container__weather {
+      width: 600px;
+      border: 1px solid lightgrey;
+      padding: 20px;
+  }
+
+
+/* .fa-search {
+    background-color: blue;
+    color: white;
+} */
