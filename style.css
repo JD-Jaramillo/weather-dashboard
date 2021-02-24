@@ -21,7 +21,7 @@
   }
 
   #container__weather {
-      width: 600px;
+      /* width: 600px; */
       border: 1px solid lightgrey;
       padding: 20px;
   }
@@ -61,6 +61,18 @@
     padding: 3px;
 }
 
+.forecast__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forecast__box {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    min-width: 150px;
+}
 
 /* .fa-search {
     background-color: blue;
