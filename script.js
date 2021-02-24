@@ -35,9 +35,19 @@ function apiCall(x) {
                 })
                 .then(function (data) {
                     console.log(data);
+                    uvIndexNumber = parseInt(data.value);
+                    console.log('unIndexNumber', uvIndexNumber);
                     var uvIndexEl = document.querySelector('#uvindex');
                     console.log(uvIndexEl);
-                    uvIndexEl.textContent = 'UV Index: ' + parseInt(data.value);
+                    uvIndexEl.textContent = 'UV Index: ' + uvIndexNumber;
+                    if (uvIndexNumber < 4) {
+                        uvIndexEl.classList.add('favorable');
+                    } else if (uvIndexNumber >= 4 && uvIndexNumber <= 7) {
+                        uvIndexEl.classList.add('moderate');
+                    } else {
+                        uvIndexEl.classList.add('severe');
+                    }
+
                 })
 
         })
