@@ -47,19 +47,26 @@ function apiCall(cityInput) {
                 })
                 .then(function (data) {
                     console.log(data);
-                    var date = '10/21';
-                    var icon = 'this'
-                    var temp = 80;
-                    var humidity = 80;
-                    var forecastWrapper = document.getElementById('forecast__wrapper');
-                    console.log('forecastWrapper', forecastWrapper);
-                    forecastWrapper.innerHTML =
-                        `<div class="forecast__box">
-                    <p class="forecast__date">${date}</p>
-                    <p class="forecast__icon">${icon}</p>
-                    <p class="forecast__temp">Temp: ${temp} F</p>
-                    <p class="forecast__humidity">Humidity: ${humidity}%</p>
-                    </div>`
+                    var data = data;
+                    var arrayList = data.list;
+                    console.log('arrayList', arrayList);
+
+                    arrayList.forEach((array) => {
+                        var noon = array.dt_txt.includes('12:00:00');
+                        console.log('noon', noon);
+                        if (noon) {
+                            console.log('array', array);
+                            var date = array.dt_txt.split(' ')[0];
+                            var temp = array.main.temp;
+                            var humidity = array.main.humidity;
+                            var forecast = document.querySelector('.forecast__wrapper');
+                            var dayForecastData = document.createElement("div");
+                            dayForecastData.className = 'forecast__box';
+                            dayForecastData.innerHTML = `<p class="forecast__date">${date}</p> <p class="forecast__temp">Temp: ${temp} F</p> <p class="forecast__humidity">Humidity: ${humidity}%</p>`;
+                            forecast.appendChild(dayForecastData);
+                            // <p class="forecast__icon">${icon}</p>
+                        }
+                    });
                 })
         })
 }
