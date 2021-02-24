@@ -59,12 +59,13 @@ function apiCall(cityInput) {
                             var date = array.dt_txt.split(' ')[0];
                             var temp = array.main.temp;
                             var humidity = array.main.humidity;
+                            var icon = array.weather[0].icon;
+                            var iconUrl = 'http://openweathermap.org/img/wn/' + icon + '@2x.png'
                             var forecast = document.querySelector('.forecast__wrapper');
                             var dayForecastData = document.createElement("div");
                             dayForecastData.className = 'forecast__box';
-                            dayForecastData.innerHTML = `<p class="forecast__date">${date}</p> <p class="forecast__temp">Temp: ${temp} F</p> <p class="forecast__humidity">Humidity: ${humidity}%</p>`;
+                            dayForecastData.innerHTML = `<p class="forecast__date">${date}</p> <img src="${iconUrl}"> <p class="forecast__temp">Temp: ${temp} F</p> <p class="forecast__humidity">Humidity: ${humidity}%</p>`;
                             forecast.appendChild(dayForecastData);
-                            // <p class="forecast__icon">${icon}</p>
                         }
                     });
                 })
