@@ -26,6 +26,26 @@
       padding: 20px;
   }
 
+.left-column {
+    background: lightgrey;
+}
+
+.cityList {
+    background-color: white;
+    list-style: none;
+    border: 1px solid #504d4d;
+    padding-left: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin: 15px;
+}
+
+.cityList__item {
+    border-bottom: 1px solid #504d4d;
+    padding: 10px;
+    text-align: left;
+}
+
 
 /* .fa-search {
     background-color: blue;

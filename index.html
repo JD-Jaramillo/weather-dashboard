@@ -15,25 +15,37 @@
     <header id='header__wrapper'>
         <h1>Weather Dashboard</h1>
     </header>
-    <div id="search__wrapper">
-        <label for="search">Search for a City:</label>
-        <input id="citySearched" type="search" placeholder="Search" required>
-        <button id="searchBtn"><i class="fas fa-search"></i></button>
+    <div class="row">
+        <div class="col-12 col-lg-3 left-column">
+            <div id="search__wrapper">
+                <label for="search">Search for a City:</label>
+                <div class="d-flex">
+                    <input id="citySearched" type="search" placeholder="Search" required>
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div>
+                <ul class="cityList">
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-lg-9">
+            <div id="container__weather">
+                <h2 id="cityName"></h2>
+                <h3 id="temp"></h3>
+                <h3 id="humidity"></h3>
+                <h3 id="windspeed"></h3>
+                <h3 id="uvindex"></h3>
+            </div>
+            <div id="container__5-day-forecast">
+                <h2>5-Day Forecast</h2>
+            </div>
+        </div>
     </div>
-    <div>
-        <ul class="cityList"></ul>
-    </div>
-    <div id="container__weather">
-        <h2 id="cityName"></h2>
-        <h3 id="temp"></h3>
-        <h3 id="humidity"></h3>
-        <h3 id="windspeed"></h3>
-        <h3 id="uvindex"></h3>
-    </div>
-    <div id="container__5-day-forecast">
-        <h2>5-Day Forecast</h2>
-    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
 </body>
 
