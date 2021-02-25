@@ -1,5 +1,5 @@
 # weather-dashboard
-Weather dashboard that contains weather data for cities, built using third party API's. 
+Weather dashboard that contains weather data for cities, built using third party API's. The user enters a city name in the search field, then the app displays the current weather conditions in that city, inlcuding temperature, humidity, and UV index. 
 
 ## Table of Contents
 
@@ -11,18 +11,18 @@ Weather dashboard that contains weather data for cities, built using third party
 * [Contributing](#Contributing)
 
 ## HTML
-
+Added an HTML with the basic structure and containers for the API data to come through as well as for the cities to all be added as a list on the left of the page, including the search buttons with the icons from Fontawesome.com. 
 
 ## CSS
-
+Added the appropriate styling for the page to match the criteria requested, including the styling for the butons, input fields and container. 
 
 
 ## JS 
+Created the click event to get the input values from the cities searched as well as several fucntions to fetch the open weather API's and get the requeired data back in order to show the weather information and display it on the page for the user. 
 
+Link to deployed weather dashboard: [Deployed site](https://jd-jaramillo.github.io/weather-dashboard/)
 
-Link to deployed weather dashboard: [Deployed site]()
-
-![image of work day scheduler](/images/image-work-day-scheduler.png)
+![image of work day scheduler](/images/weatherpage.png)
 
 ## Requirements
 GIVEN a weather dashboard with form inputs
@@ -41,7 +41,7 @@ THEN I am again presented with current and future conditions for that city
 
 There is no need to install anything, to use the weather dashboard simply follow the link below. 
 
-See deployed site here: [Deployed Site]()
+See deployed site here: [Deployed Site](https://jd-jaramillo.github.io/weather-dashboard/)
 
 
 See repository here: [GitHub Repo](https://github.com/JD-Jaramillo/weather-dashboard)
