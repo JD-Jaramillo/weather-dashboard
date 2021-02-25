@@ -74,7 +74,6 @@
     min-width: 150px;
 }
 
-/* .fa-search {
-    background-color: blue;
-    color: white;
-} */
+#clear_btn {
+    margin-left: 60px;
+}
