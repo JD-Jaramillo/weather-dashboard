@@ -39,7 +39,7 @@ THEN I am again presented with current and future conditions for that city
 
 ## Installation
 
-There is no need to install anything, to use the weather dashboard simply follow the link below. 
+There is no need to install anything, to use the weather dashboard simply follow the link below.   
 
 See deployed site here: [Deployed Site](https://jd-jaramillo.github.io/weather-dashboard/)
 

@@ -47,7 +47,7 @@ function apiCall(cityInput) {
         })
 }
 
-// function for getting five day weather forcast from the api
+// function for getting five day weather forcast from the api e
 function fiveDayAPICall(cityInput) {
     var fiveDayAPI = 'http://api.openweathermap.org/data/2.5/forecast?q=' + cityInput + '&appid=' + appkey + '&units=' + unit;
 
