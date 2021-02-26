@@ -23,7 +23,7 @@ function apiCall(cityInput) {
             var lat = parseInt(data.coord.lat);
             var lon = parseInt(data.coord.lon);
 
-            var uvIndexUrl = 'http://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=' + appkey;
+            var uvIndexUrl = 'https://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=' + appkey;
 
             // fetching the UVIndex open weather api so that we can set info on the uv index
             fetch(uvIndexUrl)
@@ -49,7 +49,7 @@ function apiCall(cityInput) {
 
 // function for getting five day weather forcast from the api e
 function fiveDayAPICall(cityInput) {
-    var fiveDayAPI = 'http://api.openweathermap.org/data/2.5/forecast?q=' + cityInput + '&appid=' + appkey + '&units=' + unit;
+    var fiveDayAPI = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityInput + '&appid=' + appkey + '&units=' + unit;
 
     fetch(fiveDayAPI)
         .then(function (response) {
@@ -69,7 +69,7 @@ function fiveDayAPICall(cityInput) {
                     var temp = dayObject.main.temp;
                     var humidity = dayObject.main.humidity;
                     var icon = dayObject.weather[0].icon;
-                    var iconUrl = 'http://openweathermap.org/img/wn/' + icon + '@2x.png'
+                    var iconUrl = 'https://openweathermap.org/img/wn/' + icon + '@2x.png'
                     var forecast = document.querySelector('.forecast__wrapper');
                     var dayForecastData = document.createElement("div");
                     dayForecastData.className = 'forecast__box';
