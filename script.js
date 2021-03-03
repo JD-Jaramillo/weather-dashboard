@@ -8,7 +8,6 @@ var cityBtns = document.querySelectorAll('.city-button');
 var searchHistoryArray = JSON.parse(localStorage.getItem('citySearched')) || [];
 // on page load get the cities from local storage and put them in li and append to ul
 function onPageLoad() {
-    citiesListWrapper.innerHTML = '';
 
     searchHistoryArray.forEach((city) => {
         var li = document.createElement('li');
