@@ -2,6 +2,32 @@
 var appkey = '14c203985535363483dc6e984fdf3c1b';
 var currentDate = moment().format("MM/D/YYYY");
 var unit = 'imperial';
+var citiesListWrapper = document.querySelector('#citiesList');
+var cityBtns = document.querySelectorAll('.city-button');
+
+var searchHistoryArray = JSON.parse(localStorage.getItem('citySearched')) || [];
+// on page load get the cities from local storage and put them in li and append to ul
+function onPageLoad() {
+    citiesListWrapper.innerHTML = '';
+
+    searchHistoryArray.forEach((city) => {
+        var li = document.createElement('li');
+        li.classList.add('cityList__item');
+        var button = document.createElement('button');
+        button.classList.add('city-button');
+        button.innerHTML = city;
+        li.appendChild(button);
+        citiesListWrapper.appendChild(li);
+    });
+};
+
+onPageLoad();
+
+// adding click event to the city buttons so they are passed into the apiCall when they are clicked
+$(".city-button").on("click", function () {
+    console.log('this worked');
+    apiCall($(this).text());
+});
 
 // function to call the openweathermap api to get data on the city the user inputs
 function apiCall(cityInput) {
@@ -88,10 +114,10 @@ function clear5Day() {
 }
 
 // creating an empty array to put the cities the user searches for in
-var citiesList = [];
+// var citiesList = [];
 
 // the Ul to append with city list
-var citiesListUl = document.querySelector('#citiesList');
+// var citiesListUl = document.querySelector('#citiesList');
 
 // onclick event for adding to the city list
 $("#searchBtn").on("click", function () {
@@ -102,18 +128,20 @@ $("#searchBtn").on("click", function () {
     // IF value of cityInput is not equal to "" then create an Li element, add a classs, add the city input and append it to the ul
     if (cityInput !== "") {
         console.log('city button working');
-        citiesListUl.innerHTML = ' ';
+        citiesListWrapper.innerHTML = ' ';
         // pushing the cities onto the cities list array
-        citiesList.push(cityInput);
+        searchHistoryArray.push(cityInput);
         // adding the cities array to local storage
-        localStorage.setItem('citiesList', JSON.stringify(citiesList));
+        localStorage.setItem('citySearched', JSON.stringify(searchHistoryArray));
 
         // for every city in the array create an li and append to the ul
-        citiesList.forEach((city) => {
+        searchHistoryArray.forEach((city) => {
             var li = document.createElement('li');
             li.classList.add('cityList__item');
-            li.innerHTML = city;
-            citiesListUl.appendChild(li);
+            var button = document.createElement('button');
+            button.innerHTML = city;
+            li.appendChild(button);
+            citiesListWrapper.appendChild(li);
         });
 
         // when a city is clicked for, clear the 5 day forecast from before
@@ -124,21 +152,3 @@ $("#searchBtn").on("click", function () {
     }
 });
 
-// on page load get the cities from local storage and put them in li and append to ul
-function onPageLoad() {
-
-    var storedItems = localStorage.getItem('citiesList');
-
-    // take the stored item string and turn it into an array
-    var storedItemsArr = storedItems.split(',');
-
-    storedItemsArr.forEach((city) => {
-        var citiesListUl = document.querySelector('#citiesList');
-        var li = document.createElement('li');
-        li.classList.add('cityList__item');
-        li.innerHTML = city;
-        citiesListUl.appendChild(li);
-    });
-};
-
-onPageLoad();
