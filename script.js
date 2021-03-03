@@ -113,12 +113,6 @@ function clear5Day() {
     forecast.innerHTML = '';
 }
 
-// creating an empty array to put the cities the user searches for in
-// var citiesList = [];
-
-// the Ul to append with city list
-// var citiesListUl = document.querySelector('#citiesList');
-
 // onclick event for adding to the city list
 $("#searchBtn").on("click", function () {
     event.preventDefault();
